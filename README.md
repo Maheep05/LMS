@@ -1,4 +1,4 @@
-# 📚 Bibliotheca — Library Management System
+# 📚 LMS — Library Management System
 
 A full-stack Library Management System built with **React + Node.js + MySQL**.
 

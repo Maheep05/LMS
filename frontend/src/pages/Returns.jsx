@@ -57,7 +57,7 @@ export default function Returns() {
     },
     { key: 'action', label: '',
       render: (_, row) => (
-        <button className="btn-primary btn btn-sm" onClick={e => { e.stopPropagation(); setConfirmRow(row) }}>
+        <button className="btn-primary btn btn-sm" onClick={e => { e.stopPropagation(); setConfirmRow(row) }} title="SQL: UPDATE + Trigger - Updates borrow status and auto-calculates fines">
           <RotateCcw className="w-3 h-3" /> Return
         </button>
       )

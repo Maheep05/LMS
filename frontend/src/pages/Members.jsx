@@ -95,16 +95,16 @@ export default function Members() {
     { key: 'actions', label: '',
       render: (_, row) => (
         <div className="flex items-center gap-1">
-          <button className="btn-ghost btn btn-xs" onClick={e => { e.stopPropagation(); openEdit(row) }}>
+          <button className="btn-ghost btn btn-xs" onClick={e => { e.stopPropagation(); openEdit(row) }} title="SQL: UPDATE - Modifies existing member data">
             <Pencil className="w-3.5 h-3.5" />
           </button>
-          <button className="btn-ghost btn btn-xs" title={row.status==='Active'?'Suspend':'Activate'}
+          <button className="btn-ghost btn btn-xs" title={`SQL: UPDATE with CASE - Toggle member status (${row.status==='Active'?'Suspend':'Activate'})`}
             onClick={e => { e.stopPropagation(); toggleStatus(row) }}>
             {row.status==='Active'
               ? <ToggleRight className="w-4 h-4" style={{ color: 'var(--success)' }} />
               : <ToggleLeft  className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />}
           </button>
-          <button className="btn-ghost btn btn-xs" style={{ color: 'var(--danger)' }}
+          <button className="btn-ghost btn btn-xs" style={{ color: 'var(--danger)' }} title="SQL: DELETE - Removes member record from database"
             onClick={e => { e.stopPropagation(); setDeleteId(row.member_id) }}>
             <Trash2 className="w-3.5 h-3.5" />
           </button>
@@ -120,7 +120,7 @@ export default function Members() {
           <h1 className="page-title">Members</h1>
           <p className="page-subtitle">{members?.length ?? 0} registered members</p>
         </div>
-        <button className="btn-primary btn" onClick={openAdd}>
+        <button className="btn-primary btn" onClick={openAdd} title="SQL: INSERT - Adds new member record to database">
           <Plus className="w-4 h-4" /> Register Member
         </button>
       </div>

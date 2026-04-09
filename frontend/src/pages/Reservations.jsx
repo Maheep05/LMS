@@ -68,7 +68,7 @@ export default function Reservations() {
     { key: 'actions', label: '',
       render: (_, row) => row.status === 'Active' ? (
         <button className="btn btn-ghost btn-sm" style={{ color: 'var(--danger)' }}
-          onClick={e => { e.stopPropagation(); handleCancel(row.reservation_id) }}>
+          onClick={e => { e.stopPropagation(); handleCancel(row.reservation_id) }} title="SQL: UPDATE with FK - Updates reservation status with foreign key constraint">
           <XCircle className="w-3.5 h-3.5" /> Cancel
         </button>
       ) : <span className="text-xs" style={{ color: 'var(--text-muted)' }}>—</span>
@@ -85,7 +85,7 @@ export default function Reservations() {
           <h1 className="page-title">Reservations</h1>
           <p className="page-subtitle">{active.length} active holds</p>
         </div>
-        <button className="btn-primary btn" onClick={() => setModal(true)}>
+        <button className="btn-primary btn" onClick={() => setModal(true)} title="SQL: INSERT - Creates new book reservation record">
           <Plus className="w-4 h-4" /> New Reservation
         </button>
       </div>
@@ -113,7 +113,7 @@ export default function Reservations() {
         footer={
           <>
             <button className="btn-secondary btn" onClick={() => setModal(false)}>Cancel</button>
-            <button className="btn-primary btn" onClick={handleCreate} disabled={saving}>
+            <button className="btn-primary btn" onClick={handleCreate} disabled={saving} title="SQL: INSERT - Adds new reservation with member & book relationship">
               {saving ? 'Creating…' : 'Reserve'}
             </button>
           </>

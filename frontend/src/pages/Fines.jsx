@@ -49,11 +49,11 @@ export default function Fines() {
     { key: 'actions', label: '',
       render: (_, row) => row.payment_status === 'Pending' ? (
         <div className="flex items-center gap-1.5">
-          <button className="btn btn-success btn-sm"
+          <button className="btn btn-success btn-sm" title="SQL: UPDATE - Updates fine payment status to 'Paid'"
             onClick={e => { e.stopPropagation(); handle(() => payFine(row.fine_id), row.fine_id, `₹${row.amount} collected`) }}>
             <CheckCircle className="w-3.5 h-3.5" /> Collect
           </button>
-          <button className="btn btn-ghost btn-sm" style={{ color: 'var(--text-secondary)' }}
+          <button className="btn btn-ghost btn-sm" style={{ color: 'var(--text-secondary)' }} title="SQL: UPDATE - Marks fine as waived"
             onClick={e => { e.stopPropagation(); handle(() => waiveFine(row.fine_id), row.fine_id, 'Fine waived') }}>
             <XCircle className="w-3.5 h-3.5" /> Waive
           </button>
@@ -85,6 +85,7 @@ export default function Fines() {
             {TABS.map(t => (
               <button key={t}
                 className="px-4 py-1.5 rounded-lg text-sm font-semibold transition-all"
+                title={`SQL: SELECT with WHERE - Filter fines by ${t.toLowerCase()} status`}
                 style={tab === t
                   ? { backgroundColor: 'var(--bg-surface)', color: 'var(--text-primary)', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }
                   : { color: 'var(--text-muted)' }

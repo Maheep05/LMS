@@ -24,6 +24,7 @@
     --warning:        #d97706;
     --sidebar-w:      240px;
     --text-scale:     1;
+    --custom-bg:      none;
   }
 
   .dark {
@@ -44,11 +45,12 @@
     --danger:         #f87171;
     --warning:        #fbbf24;
     --text-scale:     1;
+    --custom-bg:      none;
   }
 
   html, body, #root {
     height: 100%;
-    background-color: var(--bg-base);
+    background: var(--custom-bg, var(--bg-base));
     color: var(--text-primary);
     font-family: 'Poppins', system-ui, sans-serif;
     font-size: calc(16px * var(--text-scale));

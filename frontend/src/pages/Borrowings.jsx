@@ -68,7 +68,7 @@ export default function Borrowings() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Issue Form */}
         <div className="card">
-          <div className="card-header">
+          <div className="card-header" title="SQL: INSERT/Stored Procedure - Issues book via stored procedure with transaction handling">
             <h2 className="text-base font-bold flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
               <BookOpen className="w-4 h-4" style={{ color: 'var(--brand)' }} />
               Issue Book

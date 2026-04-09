@@ -107,8 +107,7 @@ export default function Dashboard() {
                   <td><span className="text-xs">{formatDate(b.borrow_date)}</span></td>
                   <td>
                     <span className="text-xs font-semibold"
-                      style={b.display_status !== 'Overdue' ? { color: 'var(--text-muted)' } : { color: 'var(--danger)' }}
-                      style={b.display_status !== 'Overdue' ? { color: 'var(--text-muted)' } : {}}>
+                      style={b.display_status !== 'Overdue' ? { color: 'var(--text-muted)' } : { color: 'var(--danger)' }}>
                       {formatDate(b.due_date)}
                     </span>
                   </td>

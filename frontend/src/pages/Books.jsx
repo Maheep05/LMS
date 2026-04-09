@@ -105,11 +105,11 @@ export default function Books() {
     { key: 'actions', label: '',
       render: (_, row) => (
         <div className="flex items-center gap-1">
-          <button className="btn-ghost btn btn-xs" onClick={(e) => { e.stopPropagation(); openEdit(row) }}>
+          <button className="btn-ghost btn btn-xs" onClick={(e) => { e.stopPropagation(); openEdit(row) }} title="SQL: UPDATE - Modifies existing book data">
             <Pencil className="w-3.5 h-3.5" />
           </button>
           <button className="btn-ghost btn btn-xs" style={{ color: 'var(--danger)' }}
-            onClick={(e) => { e.stopPropagation(); setDeleteId(row.book_id) }}>
+            onClick={(e) => { e.stopPropagation(); setDeleteId(row.book_id) }} title="SQL: DELETE - Removes book record from database">
             <Trash2 className="w-3.5 h-3.5" />
           </button>
         </div>
@@ -124,7 +124,7 @@ export default function Books() {
           <h1 className="page-title">Books</h1>
           <p className="page-subtitle">{books?.length ?? 0} books in catalogue</p>
         </div>
-        <button className="btn-primary btn" onClick={openAdd}>
+        <button className="btn-primary btn" onClick={openAdd} title="SQL: INSERT - Adds new book record to database">
           <Plus className="w-4 h-4" /> Add Book
         </button>
       </div>
@@ -168,7 +168,7 @@ export default function Books() {
                   <option value="">Select author</option>
                   {authors?.map(a => <option key={a.author_id} value={a.author_id}>{a.name}</option>)}
                 </select>
-                <button className="btn-secondary btn btn-sm px-2.5" title="Add author" onClick={() => setAuthorModal(true)}>
+                <button className="btn-secondary btn btn-sm px-2.5" title="SQL: INSERT - Adds new author to database" onClick={() => setAuthorModal(true)}>
                   <Plus className="w-3.5 h-3.5" />
                 </button>
               </div>
