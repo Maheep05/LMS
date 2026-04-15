@@ -249,24 +249,6 @@ export default function Login() {
             </button>
           </form>
 
-          {/* Demo Info */}
-          <div className="mt-8 p-4 rounded-lg bg-gray-900 border border-gray-800">
-            <p className="text-sm font-semibold text-gray-300 mb-3">
-              Demo Credentials:
-            </p>
-            <div className="space-y-2">
-              <div>
-                <p className="text-xs text-gray-500">Email:</p>
-                <p className="text-sm text-gray-300 font-mono">
-                  admin@library.com
-                </p>
-              </div>
-              <div>
-                <p className="text-xs text-gray-500">Password:</p>
-                <p className="text-sm text-gray-300 font-mono">admin123</p>
-              </div>
-            </div>
-          </div>
 
           {/* Footer Link */}
           <div className="mt-8 text-center">
